@@ -1,46 +1,100 @@
-# Getting Started with Create React App
+# Giving Talents - Client Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://givingtalents.org/wp-content/uploads/2023/05/giving-talents_final-logo_vertical-purple-to-orange-gradient-on-text.png" alt="drawing" width="100"/>
 
-## Available Scripts
+Learn more at [givingtalents.org](https://givingtalents.org/)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+This Project is a client-server application platform designed for the non-profit organization "Giving Talents." This platform enables users to sign up, manage their profiles, and facilitates volunteer coordination through various features including location tracking and notifications.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **User Management**: Secure sign-up and profile management system
+- **Volunteer Data Collection**: Internal forms to record volunteer information in PostgreSQL database
+- **Real-time Notifications**: Integration with Twilio for phone notifications
+- **Location Tracking**: Mapbox API integration to track volunteers' whereabouts
+- **Responsive UI**: Modern interface built with Tailwind CSS
+- **Full-stack Typescript**: React frontend with TypeScript
+- **Robust Backend**: Golang server with GORM for database operations
 
-### `npm test`
+## Technology Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
+- Design: givingtalents.wordpress.com
+- React (TypeScript)
+- Tailwind CSS
 
-### `npm run build`
+### Backend
+- Golang
+- Mapbox API
+- GORM (Go ORM)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Infrastructure
+- Google Cloud Platform (GCP) for hosting
+- Docker for containerization
+- PostgreSQL database (hosted on GCP)
+- Neon (for database operations)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Additional Services
+- Twilio for notifications
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+### Prerequisites
+- Node.js (v14 or higher)
+- Go (v1.16 or higher)
+- Docker
+- PostgreSQL
+- GCP account (for deployment)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Setup
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Jloon02/Giving-Talent.git
+    ```
+2. Frontend Setup:
+    ```bash
+    npm install
+    npm start
+    ```
+3. Backend Setup:
+    ```bash
+    cd server/
+    go mod download
+    go run main.go
+    ```
+4. Database Setup:
+- Ensure PostgreSQL is running
+- Update database credentials in the configuration files
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+5. Environment Variables:
+Create a `.env` file in both client and server directories with necessary variables (Twilio credentials, database URL, etc.)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Deployment
 
-## Learn More
+The application is designed to be deployed on Google Cloud Platform:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Build Docker images:
+```bash
+docker build -t server .
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Push to GCP Container Registry
+
+3. Deploy using Google Kubernetes Engine or Cloud Run
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+## License
+
+[MIT License](LICENSE)
+
+## Contact
+
+For questions or support, please contact:
+- GitHub: [@Jloon02](https://github.com/Jloon02)
+
